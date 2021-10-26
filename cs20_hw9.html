@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JSON Song List</title>
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+<style type="text/css">
+
+html {
+	margin: 25px 20px 20px 20px;
+	font-family: Candara, sans-serif;
+	color: #FFF;
+	line-height: 150%;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	background-image:url('background.jpg');
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:cover;
+	background-position:bottom;
+}
+	
+</style>
+
+</head>
+
+<body>
+<script language="javascript">
+
+document.write=function(s){
+    var scripts = document.getElementsByTagName('script');
+    var lastScript = scripts[scripts.length-1];
+    lastScript.insertAdjacentHTML("beforebegin", s);
+}
+
+$.get( "https://ajmiller00.github.io/hw9/song_list.json?c=5", 
+	  function(data) {
+		str = JSON.stringify(data);
+		//alert(str);
+		document.write("<h1>Cover Band Set List</h1><h2>Raw data string:</h2>" + str +"<br/><br/>");
+	strHTML = "<h2>Set list (all songs):</h2><ol>";
+	//alert(data);
+	data.forEach(function(song) { 
+	strHTML += "<li>" + song.title
+		    + " – Artist: " + song.artist
+			+ " – Genre: " + song.genre
+			+ " – Year: " + song.year
+			+ "</li>";
+		}) 
+	strHTML += "</ol>";
+	document.write(strHTML);
+
+	document.write(makeForm(data));
+
+	document.forms[0].onsubmit = function() {
+	    document.write(filter(data));
+	    return false;
+	}
+
+})
+
+function filter(data) {
+	//alert("hi");
+	a = document.getElementsByName('pick_songs')[0];
+	str = "<br/>Your list of " + a.options[a.selectedIndex].text + " songs is: <ol>";
+	//alert(a.options[a.selectedIndex].text);
+	//alert("hi2");
+	data.forEach(function(song) {
+		//alert(song.genre);
+		if (song.genre == a.options[a.selectedIndex].text)
+			str += "<li>" + song.title;
+	})
+	str += "</ol>";
+	return str;
+}
+
+function makeForm(data)
+{
+	//var data1 = data;
+	t="<h2>Set list (filtered):</h2><p>Please pick a genre to listen to:</p>";
+	//alert(data);
+	t += "<form>"
+		+ "<select name='pick_songs'><option></option>";
+
+	data.forEach(function(song) {
+		if (!(t.includes(song.genre)))
+			t += "<option>" + song.genre + "</option>";
+	})
+
+	t+= "</select> &nbsp"; 
+	t+= "<input type='submit' value='Filter'/>";
+	t+= "</form>";
+	//alert(t);
+	return t;
+}
+
+</script>
+
+</body>
+</html>
