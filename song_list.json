@@ -19,10 +19,9 @@
 	{
 		"title" : "Cruise",
 		"artist" : "Florida Georgia Line",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Country"
-		}],
+		},
 		"year" : 2012
 	},
 	{
