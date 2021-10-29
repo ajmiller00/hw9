@@ -2,20 +2,18 @@
 	{
 		"title" : "THATS WHAT I WANT",
 		"artist" : "Lil Nas X",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Hip-Hop",
 			"genre2" : "Rap"
-		}],
+		},
 		"year" : 2021
 	},
 	{
 		"title" : "Everytime We Touch",
 		"artist" : "Cascada",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Dance"
-		}],
+		},
 		"year" : 2006
 	},
 	{
@@ -30,65 +28,58 @@
 	{
 		"title" : "Came Here For Love",
 		"artist" : "Sigala & Ella Eyre",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Dance"
-		}],
+		},
 		"year" : 2017
 	},
 	{
 		"title" : "TJ",
 		"artist" : "Orange Guava Passion",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Pop"
-		}],
+		},
 		"year" : 2019
 	},
 	{
 		"title" : "You Go Down Smooth",
 		"artist" : "Lake Street Dive",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Pop"
-		}],
+		},
 		"year" : 2011
 	},
 	{
 		"title" : "Take Me Home, Country Roads",
 		"artist" : "John Denver",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Country"
-		}],
+		},
 		"year" : 1971
 	},
 	{
 		"title" : "How Sweet It Is (To Be Loved By You)",
 		"artist" : "James Taylor",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Folk"
-		}],
+		},
 		"year" : 1975
 	},
 	{
 		"title" : "Sir Duke",
 		"artist" : "Stevie Wonder",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "R&B",
 			"genre2" : "Soul"
-		}],
+		},
 		"year" : 1976
 	},
 	{
 		"title" : "Bohemian Rhapsody",
 		"artist" : "Queen",
-		"genre" : [
-			{
+		"genre" : {
 			"genre1" : "Rock"
-		}],
+		},
 		"year" : 1975
 	}
 ]
